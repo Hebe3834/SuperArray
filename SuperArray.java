@@ -60,12 +60,52 @@ public class SuperArray{
       output = output.concat(arr[i] + ", ");
     }
     return "[" + output + "]";
+    //return arr[0]+arr[1]+arr[2]+arr[3]+arr[4];
   }
   public boolean contains(String element){
     boolean output=false;
     for (int i=0; i<arrSize; i++){
       if (arr[i]==element){
         output=true;
+      }
+    }
+    return output;
+  }
+  public String	add(int index, String element){
+    if (index<0 || index>arr.length){
+      return "Error: Index out of bounds";
+    }
+    else {
+      String storage[] = new String[arr.length+1];
+      for(int i=0; i<index; i++){
+        storage[i]=arr[i];
+      }
+      for(int n=index; n<arr.length; n++){
+        storage[n+1]=arr[n];
+      }
+      storage[index]=element;
+      String[] arr = new String[storage.length];
+      for(int z=0; z<storage.length; z++){
+        arr[z]=storage[z];
+      }
+      arrSize+=1;
+      return arr[0]+arr[1]+arr[2]+arr[3]+arr[4];
+    }
+  }
+  public int indexOf(String element){
+    int output=-1;
+    for (int i=arrSize; i>0; i--){
+      if (arr[i]==element){
+        output=i;
+      }
+    }
+    return output;
+  }
+  public int lastIndexOf(String element){
+    int output=-1;
+    for (int i=0; i<arrSize; i++){
+      if (arr[i]==element){
+        output=i;
       }
     }
     return output;

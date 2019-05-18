@@ -8,11 +8,14 @@ class Driver{
     System.out.println(A.add("test"));
     System.out.println(A.add("B"));
     System.out.println(A.add("FISH"));
-    System.out.println(A.add("cat"));
     System.out.println(A.add("Dog"));
     System.out.println(A.get(0));
     System.out.println(A.set(0,"A"));
     System.out.println(A.toString());
     System.out.println(A.contains("Dog"));
+    System.out.println(A.add(2, "cat"));
+  //  System.out.println(A.toString());
+    System.out.println(A.indexOf("B"));
+    System.out.println(A.lastIndexOf("B"));
   }
 }
